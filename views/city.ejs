@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        .button {
+            background-color: teal;
+            color:white;
+            padding: 15px 15px;
+            text-decoration: none;
+        }
+        h1{
+            color: palevioletred;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Cities Page</h1>
+    <table>
+        <tr>
+            <th>City Code</th>
+            <th>Country Code</th>
+            <th>City Name</th>
+            <th>Population</th>
+            <th>By the Sea</th>
+            <th>Area</th>
+            <th>All Details</th>
+        </tr>
+        <% cities.forEach((city)=>
+            { %>
+            <tr>
+                <td>
+                    <%= city.cty_code %>
+                </td>
+                <td>
+                    <%= city.co_code %>
+                </td>
+                <td>
+                    <%= city.cty_name %>
+                </td>
+                <td>
+                    <%= city.population %>
+                </td>
+                <td>
+                    <%= city.isCoastal %>
+                </td>
+                <td>
+                    <%= city.areaKM %>
+                </td>
+                <td>
+                    <a href="/allDetails/<%= city.cty_code %>">All Details</a>
+
+                </td>
+            </tr>
+            <% }) %>
+    </table>
+        <br><br>
+    <a href="/" class="button">HOME</a> </button>
+</body>
+
+</html>

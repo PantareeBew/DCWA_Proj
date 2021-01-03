@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        .button {
+            background-color: teal;
+            color:white;
+            padding: 15px 15px;
+            text-decoration: none;
+        }
+        h1{
+            color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Countries Page</h1>
+    
+    <a href="/addCountry" class="button">Add Country</a> </button>
+    <br><br>
+
+    <table>
+        <tr>
+            <th>Country Code</th>
+            <th>Country Name</th>
+            <th>Country Details</th>
+            <th>Action</th>
+            <th>Delete</th>
+        </tr>
+       <% for(var i = 0; i <country.length; i++) { %>
+    
+            <tr>
+                <td>
+                    <%= country[i].co_code %>
+                </td>
+                <td>
+                    <%= country[i].co_name %>
+                </td>
+                <td>
+                    <%= country[i].co_details %>
+                </td>
+                <td>
+                    <a href="/updateCountry/<%= country[i].co_code%>">Update</a>
+                </td>
+                <td>
+                     <a href="/deleteCountry/<%= country[i].co_code%>">Delete</a>
+                </td>
+               
+            </tr>
+            <% } %>
+    </table>
+        <br><br>
+    <a href="/" class="button">HOME</a> </button>
+</body>
+
+</html>

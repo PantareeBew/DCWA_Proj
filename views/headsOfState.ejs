@@ -1,0 +1,48 @@
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        .button {
+            background-color: rgb(243, 128, 182);
+            color:white;
+            padding: 15px 15px;
+            text-decoration: none;
+        }
+        h1{
+            color:pink;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Head Of State</h1>
+
+    <a href="/addHeads" class="button">Add Head Of State</a> </button>
+    <br><br><br>
+
+    <table>
+        <tr>
+            <th>Country Code</th>
+            <th>Head Of State</th>
+        </tr>
+        <% headsOfStates.forEach((headsOfState)=>
+            { %>
+            <tr>
+                <td>
+                    <%= headsOfState._id %>
+                </td>
+                <td>
+                    <%= headsOfState.headOfState %>
+                </td>
+            </tr>
+            <% }) %>
+    </table>
+        <br><br>
+    <a href="/" class="button">HOME</a> </button>
+</body>
+
+</html>

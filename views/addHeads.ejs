@@ -1,0 +1,40 @@
+<head>
+    <style>
+        .button {
+            background-color:rgb(250, 121, 16);
+            color:white;
+            padding: 15px 15px;
+            text-decoration: none;
+        }
+        h1{
+            color:rgb(238, 215, 8);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Add Heads Of State</h1>
+
+      <% if (errors !=undefined) { %>
+        <ul>
+            <% errors.forEach((error)=> { %>
+                <li>
+                    <%= error.msg %>
+                </li>
+                <% }) %>
+        </ul>
+    <% } %>
+ 
+    <form action="/addHeads" method="POST">
+    <label>Country Code: </label>
+    <input type="text" name="_id"><br><br>
+    <label>Head Of State: </label>
+    <input type="text" name="headOfState"><br>
+    <input type="submit" value="Add">
+    </form>
+
+    <br><br>
+    <a href="/" class="button">HOME</a> </button>
+    <a href="/headsOfState" class="button">Heads Of State</a> </button>
+    
+</body>

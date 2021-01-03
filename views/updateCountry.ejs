@@ -1,0 +1,44 @@
+<style>
+    textarea {
+        width: 400px;
+        height: 150px;
+    }
+
+    .button {
+        background-color: teal;
+        color: white;
+        padding: 15px 15px;
+        text-decoration: none;
+    }
+</style>
+
+<body>
+    <h1>Edit Country</h1>
+
+    <% if (errors !=undefined) { %>
+        <ul>
+            <% errors.forEach((error)=> { %>
+                <li>
+                    <%= error.msg %>
+                </li>
+                <% }) %>
+        </ul>
+    <% } %>
+        
+        <form action="/updateCountry/<%=co_code%>" method="POST">
+            <label>Country Code: </label>
+            <input type="text" name="co_code" value="<%=co_code%>"><br><br>
+            <label>Country Name: </label>
+            <input type="text" name="co_name" value="<%=co_name%>"><br><br>
+            <label>Country Details: </label>
+            <textarea name="co_details"><%=co_details%></textarea><br><br>
+            <input type="submit" value="Update">
+            
+        </form> 
+        <br><br>
+    <a href="/" class="button">HOME</a> </button>
+    <a href="/country" class = "button">LIST COUNTRY</a> </button><br><br>
+    
+
+
+</body>

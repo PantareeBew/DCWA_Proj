@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        .button {
+            background-color: peru;
+            color:white;
+            padding: 15px 15px;
+            text-decoration: none;
+        }
+    </style>
+
+<body>
+
+<h1>All Details</h1>
+
+<% allDetail.forEach((all)=> { %>
+
+<form action="/allDetails/<%=all.cty_code%>" method = "GET">
+  <label>City Code:</label>
+  <input type="text" name="cty_code" value="<%=all.cty_code%>"><br><br>
+  <label >City Name:</label>
+  <input type="text" name="cty_name" value="<%=all.cty_name%>"><br><br>
+  <label >City Population:</label>
+  <input type="number" name="population" value="<%=all.population%>"><br><br>
+  <label >By the Sea:</label>
+  <input type="text" name="isCoastal" value="<%=all.isCoastal%>"><br><br>
+  <label >Area(KM):</label>
+  <input type="number" name="areaKM" value="<%=all.areaKM%>"><br><br>
+  <label >Country Code:</label>
+  <input type="text" name="co_code" value="<%=all.co_code %>"><br><br>
+  <label >Country name:</label>
+  <input type="text" name="co_name" value="<%=all.co_name%>"><br><br>
+
+</form>
+
+  <% }) %>
+
+    <br><br>
+<a href="/city" class="button">CITY</a> </button>
+<a href="/" class="button">HOME</a> </button>
+</body>
+</html>
